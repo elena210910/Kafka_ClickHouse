@@ -1,0 +1,16 @@
+CREATE TABLE raw_breweries (
+  id String,                                    --Tipo de dato String, tal como aparece en formato json
+  name String,
+  brewery_type String,
+  city String,
+  state String,
+  postal_code String,
+  country String,
+  phone String,
+  website_url String
+) ENGINE = Kafka 
+  SETTINGS
+  kafka_broker_list = '<KAFKA_BROKER>',        -- Indica la dirección y el puerto del broker de Kafka
+  kafka_topic_list = 'breweriess',             -- Nombre del tópico de Kafka al que se envían los datos
+  kafka_group_name = 'clickhouse_one',         -- Nombre del grupo de consumidores
+  kafka_format = 'JSONEachRow';                -- Formato de los mensajes (JSON)
