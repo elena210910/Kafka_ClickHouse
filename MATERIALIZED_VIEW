@@ -1,0 +1,12 @@
+CREATE MATERIALIZED VIEW breweries_processing TO breweries_data AS     --pasamos a breweries_data
+    SELECT
+        id AS id,
+        name AS name,
+        brewery_type AS brewery_type,
+        city AS city,
+        state AS state,
+        postal_code AS postal_code,
+        country AS country,
+        phone AS phone,
+        website_url AS website_url
+    FROM raw_breweries;                          -- de raw_breweries
