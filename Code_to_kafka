@@ -1,0 +1,46 @@
+import json
+import requests
+from kafka import KafkaProducer
+
+# Parámetros de conexión a Kafka
+bootstrap_servers = '<KAFKA_BROKER>'  # Dirección IP del broker de Kafka
+
+# Creación del productor de Kafka
+producer = None
+try:
+    producer = KafkaProducer(
+        bootstrap_servers=bootstrap_servers,
+        value_serializer=lambda x: json.dumps(x).encode('utf-8')
+    )
+except Exception as e:
+    print(f'Error al crear el productor de Kafka: {e}')
+    exit(1)
+
+# URL(API) para obtener datos de Open Brewery DB
+url = 'https://api.openbrewerydb.org/breweries'
+
+# Obtención de datos del API
+try:
+    response = requests.get(url)
+    response.raise_for_status()  # Verificación de errores
+    data = response.json()
+
+    # Selección de columnas que nos interesa
+    columns = ['id', 'name', 'brewery_type', 'city', 'state', 'postal_code', 'country', 'phone', 'website_url']
+    count = 0  # iniciare el contador pra asegurarme q hay datos y su cantidad
+
+    for brewery in data:  # Iteramos sobre todas las cervecerías en los datos
+        filtered_brewery = {col: brewery[col] for col in columns if col in brewery}
+        # Envío de datos filtrados a Kafka
+        producer.send('breweriess', filtered_brewery)  # Usamos el nombre del tópico 'breweriess'
+        count += 1  # Aumentamos el contador
+
+    print(f"Datos enviados exitosamente a Kafka. Número de registros enviados: {count}")
+except requests.exceptions.RequestException as e:
+    print(f"Error al solicitar datos del API: {e}")
+except Exception as e:
+    print(f"Error general: {e}")
+finally:
+    # Cierre del productor si fue creado
+    if producer:
+        producer.close()
