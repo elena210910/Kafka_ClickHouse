@@ -45,20 +45,25 @@ Los datos obtenidos:
 
 
  5. Clickhouse.
+    
+
+    ![](https://github.com/elena210910/Kafka_ClickHouse/blob/main/R.jfif)
+
+
     Ahora vamos a hablar de ClickHouse, una base de datos columnar, muy rápida y optimizada para OLAP.
     Su rendimiento se debe a sus motores de almacenamiento. Para obtener datos de Kafka, utilizaremos un motor especial.
     Os presento a ENGINE = Kafka 🚀🎆
 
-    Primero, [crearemos una tabla](https://github.com/elena210910/Kafka_ClickHouse/blob/main/tabla_raw_breweries) (raw_breweries) que extraiga datos de Kafka,
+    *Primero*, [crearemos una tabla](https://github.com/elena210910/Kafka_ClickHouse/blob/main/tabla_raw_breweries) (raw_breweries) que extraiga datos de Kafka,
     utilizando el puerto configurado, el nombre del tópico y asegurándonos de que las columnas coincidan.
 
-    Segundo. Las tablas que utilizan el motor Kafka, como en nuestro caso raw_breweries, no se pueden manejar ni consultar como una tabla normal.
+    *Segundo*. Las tablas que utilizan el motor Kafka, como en nuestro caso raw_breweries, no se pueden manejar ni consultar como una tabla normal.
     [Crearemos una segunda tabla](https://github.com/elena210910/Kafka_ClickHouse/blob/main/tabla_breweries_data) (breweries_data) con la que podamos trabajar posteriormente.
     En esta tabla, si es necesario, se pueden cambiar los tipos de datos de las columnas. 
     Lo importante es que estén correctamente especificados, de lo contrario, los datos de la tabla raw_breweries no se transferirán.
 
-    Y lo último, y muy importante. Crearemos una [vista materializada](https://github.com/elena210910/Kafka_ClickHouse/blob/main/MATERIALIZED_VIEW) (materialized view) que transferirá los 
-    datos de raw_breweries a breweries_data.
+    *Y lo último*, y muy importante. Crearemos una [vista materializada](https://github.com/elena210910/Kafka_ClickHouse/blob/main/MATERIALIZED_VIEW) (materialized view) que transferirá 
+      los datos de raw_breweries a breweries_data.
 
 
     **Observaremos los resultados!**
