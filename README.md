@@ -22,8 +22,11 @@ Los datos obtenidos:
   ***Bibliotecas utilizadas***
   
   **json:** Serialización y deserialización de datos JSON.
+  
   **requests:** Realización de solicitudes HTTP al API.
+  
   **kafka (KafkaProducer):**  Envío de datos a Kafka.
+  
 
 3. Ejecutemos nuestro archivo y luego revisemos la interfaz de Kafka. Veremos nuestro tópico allí.
    Actualmente, Kafka almacenará temporalmente nuestro archivo - 'breweriess', asegurando que los datos no 
