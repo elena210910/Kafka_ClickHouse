@@ -49,7 +49,11 @@ Los datos obtenidos:
 
     Primero, [crearemos una tabla](https://github.com/elena210910/Kafka_ClickHouse/blob/main/tabla_raw_breweries) (raw_breweries) que extraiga datos de Kafka,
     utilizando el puerto configurado, el nombre del tópico y asegurándonos de que las columnas coincidan.
-      
+
+    Segundo. Las tablas que utilizan el motor Kafka, como en nuestro caso raw_breweries, no se pueden manejar ni consultar como una tabla normal.
+    [Crearemos una segunda tabla](https://github.com/elena210910/Kafka_ClickHouse/blob/main/tabla_breweries_data) (breweries_data) con la que podamos trabajar posteriormente.
+    En esta tabla, si es necesario, se pueden cambiar los tipos de datos de las columnas. 
+    Lo importante es que estén correctamente especificados, de lo contrario, los datos de la tabla raw_breweries no se transferirán.  
   
 
 
