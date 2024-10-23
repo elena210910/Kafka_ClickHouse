@@ -1,0 +1,12 @@
+import requests
+
+url = 'https://api.openbrewerydb.org/breweries'
+response = requests.get(url)
+
+if response.status_code == 200:
+    data = response.json()
+    
+    print("Primera cervecería:", data[0])  # Imprime información sobre la primera cervecería
+else:
+    print("Error al obtener los datos:", response.status_code)  # Imprime el código de error si la solicitud falla
+
