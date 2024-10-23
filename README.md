@@ -10,4 +10,8 @@ ClickHouse a través de Kafka en tiempo real.
 Primero, verificamos el API (https://api.openbrewerydb.org/breweries)
 con una solicitud GET para entender la estructura del archivo. 
 Sabemos que los datos se devuelven en formato JSON. 
-Para esto, escribiré un código en Python y revisaré los datos.
+Para esto, escribiré un [código en Python](https://github.com/elena210910/Kafka_ClickHouse/blob/main/Code_test_python) y revisaré los datos.
+
+Los datos obtenidos:
+
+![](https://github.com/elena210910/Kafka_ClickHouse/blob/main/screen1.PNG)
