@@ -7,6 +7,8 @@ ClickHouse a través de Kafka en tiempo real.
 
 ## Realización
 
+![](https://github.com/elena210910/Kafka_ClickHouse/blob/main/OIP.jfif)
+
 1. Verificamos el API (https://api.openbrewerydb.org/breweries)
    con una solicitud GET para entender la estructura del archivo. 
    Sabemos que los datos se devuelven en formato JSON. 
