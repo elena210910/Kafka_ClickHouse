@@ -28,6 +28,8 @@ Los datos obtenidos:
      **kafka (KafkaProducer):**  Envío de datos a Kafka.
 
    
+
+   
   
 
 4. Ejecutemos nuestro archivo y luego revisemos la interfaz de Kafka. Veremos nuestro tópico allí.
@@ -36,6 +38,18 @@ Los datos obtenidos:
     No especificamos el consumer en el código, así que el resto lo haré a través de ClickHouse.
 
    ![](https://github.com/elena210910/Kafka_ClickHouse/blob/main/screen2.PNG)
+
+
+
+
+ 5. Clickhouse.
+    Ahora vamos a hablar de ClickHouse, una base de datos columnar, muy rápida y optimizada para OLAP.
+    Su rendimiento se debe a sus motores de almacenamiento. Para obtener datos de Kafka, utilizaremos un motor especial.
+    Os presento a ENGINE = Kafka 🚀🎆
+
+    Primero, [crearemos una tabla](https://github.com/elena210910/Kafka_ClickHouse/blob/main/tabla_raw_breweries) (raw_breweries) que extraiga datos de Kafka,
+    utilizando el puerto configurado, el nombre del tópico y asegurándonos de que las columnas coincidan.
+      
   
 
 
