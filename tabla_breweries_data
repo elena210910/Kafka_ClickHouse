@@ -1,0 +1,12 @@
+CREATE TABLE breweries_data (
+  id String,
+  name String,
+  brewery_type String,
+  city String,
+  state String,
+  postal_code String,
+  country String,
+  phone String,
+  website_url String
+) ENGINE = MergeTree()  -- Se usa este motor, porque permite un almacenamiento eficiente y consultas rápidas en grandes volúmenes de datos, ideal para análisis OLAP 
+ORDER BY (id);
