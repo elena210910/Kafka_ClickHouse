@@ -53,7 +53,37 @@ Los datos obtenidos:
     Segundo. Las tablas que utilizan el motor Kafka, como en nuestro caso raw_breweries, no se pueden manejar ni consultar como una tabla normal.
     [Crearemos una segunda tabla](https://github.com/elena210910/Kafka_ClickHouse/blob/main/tabla_breweries_data) (breweries_data) con la que podamos trabajar posteriormente.
     En esta tabla, si es necesario, se pueden cambiar los tipos de datos de las columnas. 
-    Lo importante es que estén correctamente especificados, de lo contrario, los datos de la tabla raw_breweries no se transferirán.  
+    Lo importante es que estén correctamente especificados, de lo contrario, los datos de la tabla raw_breweries no se transferirán.
+
+    Y lo último, y muy importante. Crearemos una [vista materializada](https://github.com/elena210910/Kafka_ClickHouse/blob/main/MATERIALIZED_VIEW) (materialized view) que transferirá los 
+    datos de raw_breweries a breweries_data.
+
+
+    **Observaremos los resultados!**
+
+En la interfaz, en la carpeta de consumidores, apareció el nombre del grupo de consumidores ('clickhouse_one') que especificamos en 
+la primera tabla en ClickHouse **raw_breweries**, lo que significa que los datos se cargaron en la tabla gracias a ese motor ENGINE = Kafka.
+
+![](https://github.com/elena210910/Kafka_ClickHouse/blob/main/screen3.PNG)
+
+
+
+
+
+Y ahora, miremos nuestras tablas y escribamos una consulta simple a la tabla con la que trabajaremos posteriormente:
+Select DISTINCT (*)
+FROM breweries_data bd
+LIMIT 10
+
+
+![](https://github.com/elena210910/Kafka_ClickHouse/blob/main/screen4.PNG)
+
+
+
+
+**¡Voilà! Todo funciona, todos los datos se cargaron en la tabla principal. Si es necesario, los datos pueden seguir llegando en tiempo real con la ayuda de Kafka. ¡Integrar ClickHouse con Kafka es muy conveniente!**
+
+🚀🎉
   
 
 
