@@ -1,13 +1,14 @@
 # Kafka_ClickHouse
 
 # Descripción del proyecto
+![](https://github.com/elena210910/Kafka_ClickHouse/blob/main/OIP.jfif)
+
+
 
 Este proyecto está diseñado para cargar datos a través de la API de una compañía cervecera estadounidense en la base de datos 
 ClickHouse a través de Kafka en tiempo real.
 
 ## Realización
-
-![](https://github.com/elena210910/Kafka_ClickHouse/blob/main/OIP.jfif)
 
 1. Verificamos el API (https://api.openbrewerydb.org/breweries)
    con una solicitud GET para entender la estructura del archivo. 
