@@ -45,7 +45,7 @@ Los datos obtenidos:
 
 
 
- 5. Clickhouse.
+ 5. **Clickhouse.**
     
     Ahora vamos a hablar de ClickHouse, una base de datos columnar, muy rápida y optimizada para OLAP.
     Su rendimiento se debe a sus motores de almacenamiento. Para obtener datos de Kafka, utilizaremos un motor especial.
