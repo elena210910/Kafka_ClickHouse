@@ -61,8 +61,9 @@ Los datos obtenidos:
      En esta tabla, si es necesario, se pueden cambiar los tipos de datos de las columnas. 
      Lo importante es que estén correctamente especificados, de lo contrario, los datos de la tabla raw_breweries no se transferirán.
 
-    *Y lo último*, y muy importante. Crearemos una ![vista materializada](https://github.com/elena210910/Kafka_ClickHouse/blob/main/MATERIALIZED_VIEW) (materialized view) que transferirá 
-      los datos de raw_breweries a breweries_data.
+    *Y lo último*, y muy importante.
+     Crearemos una [vista materializada](https://github.com/elena210910/Kafka_ClickHouse/blob/main/MATERIALIZED_VIEW) (materialized view)
+     que transferirá  los datos de raw_breweries a breweries_data.
 
 
     **Observaremos los resultados!**
