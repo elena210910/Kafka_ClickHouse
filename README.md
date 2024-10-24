@@ -1,7 +1,7 @@
 # Kafka_ClickHouse
 
 # Descripción del proyecto
-![](https://github.com/elena210910/Kafka_ClickHouse/blob/main/OIP.jfif)
+![](https://github.com/elena210910/Kafka_ClickHouse/blob/main/OIP.jfif)![](https://github.com/elena210910/Kafka_ClickHouse/blob/main/R.jfif)
 
 
 
